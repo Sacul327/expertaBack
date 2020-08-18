@@ -1,24 +1,48 @@
 package com.pubs.pubs.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="pub_list")
 public class Pubs{
 	
-	private String id;
+	@Id
+    @GeneratedValue
+	private int id;
+	
+	@Column(name="name")
 	private String name;
+	
+	@Column(name="domicilio")
 	private String domicilio;
+	
+	@Column(name="email")
 	private String email;
+	
+	@Column(name="phone")
 	private String phone;
+	
+	@Column(name="cuit")
 	private String cuit;
+	
+	@Column(name="horario")
 	private String horario;
 	
+	@Column(name="puntuacion")
 	private int puntuacion;
 	
-	private boolean parking;
+	@Column(name="parking")
+	private int parking;
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -78,11 +102,11 @@ public class Pubs{
 		this.puntuacion = puntuacion;
 	}
 
-	public boolean isParking() {
+	public int isParking() {
 		return parking;
 	}
 
-	public void setParking(boolean parking) {
+	public void setParking(int parking) {
 		this.parking = parking;
 	}
 
